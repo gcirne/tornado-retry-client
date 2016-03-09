@@ -25,19 +25,6 @@ def do_my_request()
         response = yield http_retry(http_client, 'http://globo.com', attempts=2)
     except HTTPError:
         pass # My request failed after 2 retries
-
-# OR
-
-from tornado_retry_client import RetryClient
-
-retry_client = RetryClient(max_retries=2)
-
-@gen.coroutine
-def do_my_request()
-    try:
-        response = yield retry_client.fetch('http://globo.com')
-    except HTTPError:
-        pass # My request failed after 2 retries
 ```
 
 ## Development

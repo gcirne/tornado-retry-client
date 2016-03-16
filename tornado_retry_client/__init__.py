@@ -21,7 +21,8 @@ class RetryClient(object):
                  retry_start_timeout=RETRY_START_TIMEOUT,
                  retry_exceptions=None):
 
-        logging.warning('RetryClient is deprecated. Please use http_retry instead.')
+        logging.warning(
+            'RetryClient is deprecated. Please use http_retry instead.')
 
         if http_client:
             self.http_client = http_client
